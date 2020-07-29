@@ -1,0 +1,431 @@
+fileFormatVersion: 2
+guid: 6a916f9311283bf44a751a20ddb4b77a
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Arm_BackgroundSpriteSheet_0
+    21300002: Arm_BackgroundSpriteSheet_1
+    21300004: Arm_BackgroundSpriteSheet_2
+    21300006: Arm_BackgroundSpriteSheet_3
+    21300008: Arm_BackgroundSpriteSheet_4
+    21300010: Arm_BackgroundSpriteSheet_5
+    21300012: Arm_BackgroundSpriteSheet_6
+    21300014: Arm_BackgroundSpriteSheet_7
+    21300016: Arm_BackgroundSpriteSheet_8
+    21300018: Arm_BackgroundSpriteSheet_9
+    21300020: Arm_BackgroundSpriteSheet_10
+    21300022: Arm_BackgroundSpriteSheet_11
+    21300024: Arm_BackgroundSpriteSheet_12
+    21300026: Arm_BackgroundSpriteSheet_13
+    21300028: Arm_BackgroundSpriteSheet_14
+    21300030: Arm_BackgroundSpriteSheet_15
+    21300032: Arm_BackgroundSpriteSheet_16
+    21300034: Arm_BackgroundSpriteSheet_17
+    21300036: Arm_BackgroundSpriteSheet_18
+    21300038: Arm_BackgroundSpriteSheet_19
+    21300040: Arm_BackgroundSpriteSheet_20
+    21300042: Arm_BackgroundSpriteSheet_21
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 184
+        width: 364
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 201
+        width: 353
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 0
+        width: 363
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 78
+        width: 173
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 23
+        width: 112
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 9
+        width: 38
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 46
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 112
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 115
+        width: 33
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 117
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 127
+        width: 60
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 100
+        width: 34
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 83
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 76
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 52
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 72
+        width: 6
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 65
+        width: 27
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 46
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 44
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 14
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 6
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 363
+        width: 33
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
