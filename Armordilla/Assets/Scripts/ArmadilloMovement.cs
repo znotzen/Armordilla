@@ -73,23 +73,17 @@ public class ArmadilloMovement : MonoBehaviour
             anim.SetBool("Roll", false);
         }
 
-        //Touch
-        for (int i = 0; i < Input.touchCount; i++)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            RaycastHit2D hit;
-            hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.touches[i].position), Vector2.zero);
-            if (hit.collider != null && hit.collider.transform.gameObject.name == "BtnBrace" && Input.touches[i].phase == TouchPhase.Began)
-            {
-                //Brace
-                movement = false;
-                anim.SetBool("Brace", true);
-            }
-            if (hit.collider != null && hit.collider.transform.gameObject.name == "BtnBrace" && Input.touches[i].phase == TouchPhase.Ended)
-            {
-                //End Brace
-                movement = true;
-                anim.SetBool("Brace", false);
-            }
+            //Brace
+            movement = false;
+            anim.SetBool("Brace", true);
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            //End Brace
+            movement = true;
+            anim.SetBool("Brace", false);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
