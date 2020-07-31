@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Arm
+  - Pear
+  - Gunner1
+  - Gunner2
+  - Gunner3
+  - Gunner4
+  - GunnerHorse
+  - FirePoint1
+  - FirePoint2
+  - FirePoint3
+  - FirePoint4
+  - FirePointHorse
   layers:
   - Default
   - TransparentFX
@@ -40,4 +52,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Arms
+    uniqueID: 3467103173
+    locked: 0
+  - name: New Layer
+    uniqueID: 2855999475
     locked: 0

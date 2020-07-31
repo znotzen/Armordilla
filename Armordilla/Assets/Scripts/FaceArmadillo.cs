@@ -21,13 +21,15 @@ public class FaceArmadillo : MonoBehaviour
     }
     void Update()
     {
-        if(this.gameObject == Gunner1)
+        if (this.gameObject == Gunner1)
         {
             FaceArm(-90);
-        } else if (this.gameObject == Gunner2)
+        }
+        else if (this.gameObject == Gunner2)
         {
             FaceArm(-50);
-        } else if (this.gameObject == Gunner3)
+        }
+        else if (this.gameObject == Gunner3)
         {
             FaceArm(-50);
         }
@@ -35,6 +37,7 @@ public class FaceArmadillo : MonoBehaviour
         {
             FaceArm(20);
         }
+            
 
     }
     void FaceArm(int offset)
@@ -46,4 +49,5 @@ public class FaceArmadillo : MonoBehaviour
 
         this.transform.eulerAngles = new Vector3(this.transform.rotation.x, this.transform.rotation.y, rotateZ);
     }
+
 }

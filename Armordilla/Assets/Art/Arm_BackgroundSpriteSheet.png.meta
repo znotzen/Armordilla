@@ -24,6 +24,7 @@ TextureImporter:
     21300038: Arm_BackgroundSpriteSheet_19
     21300040: Arm_BackgroundSpriteSheet_20
     21300042: Arm_BackgroundSpriteSheet_21
+    21300044: Arm_BackgroundSpriteSheet_22
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -556,7 +557,7 @@ TextureImporter:
         width: 33
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -567,10 +568,30 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Arm_BackgroundSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 122
+        width: 2
+        height: 5
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49999782}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9399e40fc25c8fd49873cf002c7c69f5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 76eab6a75c6783c40baa5f6aa294f66d
     vertices: []
     indices: 
     edges: []
