@@ -14,6 +14,7 @@ public class ArmadilloMovement : MonoBehaviour
     public int score = 0;
     public Transform[] SpawningSpots;
     public GameObject PearPrefab;
+    public GameObject Armor;
 
     //Audio
     public AudioSource audioSource;
@@ -48,12 +49,28 @@ public class ArmadilloMovement : MonoBehaviour
         //Setting Direction
         if(Input.GetAxisRaw("Horizontal") != 0 && direction != Input.GetAxisRaw("Horizontal"))
         {
+            Armor.transform.position = this.transform.position + new Vector3(0, 0.25f, 0);
             anim.SetFloat("Direction", Input.GetAxisRaw("Horizontal"));
             direction = Input.GetAxisRaw("Horizontal");
         }
 
+        //Armor
+        if (direction == -1)
+        {
+            Armor.transform.localScale = new Vector3(1,1,1);
+        }
+        if(direction == 1)
+        {
+            Armor.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        if (Input.GetAxisRaw("Horizontal") == 0)
+        {
+            Armor.transform.position = this.transform.position + new Vector3(0, 0.25f, 0);
+        }
+
+
         //E = Eat
-        if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
         {
             anim.SetBool("Eat", true);
         }
@@ -106,6 +123,15 @@ public class ArmadilloMovement : MonoBehaviour
     private void SpawnPear()
     {
         Instantiate(PearPrefab, SpawningSpots[Random.Range(0, 10)].transform.position, PearPrefab.transform.rotation);
+    }
+
+    public void RiseArmor()
+    {
+        Armor.transform.position = Armor.transform.position + new Vector3(0,0.06f,0);
+    }
+    public void LowerArmor()
+    {
+        Armor.transform.position = Armor.transform.position - new Vector3(0, 0.06f, 0);
     }
 
 }
