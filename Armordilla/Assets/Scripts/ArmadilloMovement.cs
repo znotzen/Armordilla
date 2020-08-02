@@ -71,14 +71,18 @@ public class ArmadilloMovement : MonoBehaviour
         }
 
         //Armor
-        if (direction == -1)
+        if (movement) //Prevents armor flipping while bracing or eating
         {
-            Armor.transform.localScale = new Vector3(1, 1, 1);
+            if (direction == -1)
+            {
+                Armor.transform.localScale = new Vector3(1, 1, 1);
+            }
+            if (direction == 1)
+            {
+                Armor.transform.localScale = new Vector3(-1, 1, 1);
+            }
         }
-        if (direction == 1)
-        {
-            Armor.transform.localScale = new Vector3(-1, 1, 1);
-        }
+        
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
             Armor.transform.position = this.transform.position + new Vector3(0, 0.25f, 0);
