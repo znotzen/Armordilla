@@ -19,5 +19,16 @@ public class ArmorScript : MonoBehaviour
             anim.SetBool("Eat", false);
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //Brace
+            anim.SetBool("Brace", true);
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            //End Brace
+            anim.SetBool("Brace", false);
+        }
+
     }
 }

@@ -47,6 +47,19 @@ public class ArmadilloMovement : MonoBehaviour
             anim.SetFloat("Speed", 0);
             Armor.transform.position = this.transform.position + new Vector3(0, 0.25f, 0);
         }
+
+        //Fixing auto flip to left idle animation
+        if(Input.GetAxisRaw("Vertical") != 0 && direction == 1)
+        {
+            anim.SetBool("RunRight", true);
+        }
+        else
+        {
+            if (anim.GetBool("RunRight") == true)
+            {
+                anim.SetBool("RunRight", false);
+            } 
+        }
         
 
         //Setting Direction
