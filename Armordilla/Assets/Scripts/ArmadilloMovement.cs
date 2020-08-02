@@ -44,6 +44,8 @@ public class ArmadilloMovement : MonoBehaviour
         else
         {
             theRB.velocity = new Vector2(0,0);
+            anim.SetFloat("Speed", 0);
+            Armor.transform.position = this.transform.position + new Vector3(0, 0.25f, 0);
         }
         
 
@@ -58,9 +60,9 @@ public class ArmadilloMovement : MonoBehaviour
         //Armor
         if (direction == -1)
         {
-            Armor.transform.localScale = new Vector3(1,1,1);
+            Armor.transform.localScale = new Vector3(1, 1, 1);
         }
-        if(direction == 1)
+        if (direction == 1)
         {
             Armor.transform.localScale = new Vector3(-1, 1, 1);
         }
