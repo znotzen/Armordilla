@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 2547118976573721815}
   m_Layer: 0
   m_Name: Scorpion
-  m_TagString: Untagged
+  m_TagString: Scorpion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -297,6 +297,7 @@ MonoBehaviour:
   MaxSC: 1.5
   scorpionBar: {fileID: 2547118975407914799}
   Point3: {fileID: 8822500866489567807, guid: 230af89493500504495c2f489314ac98, type: 3}
+  armadilloMovement: {fileID: 0}
 --- !u!1 &2547118976890796068
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +356,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!114 &2547118976890796089
 MonoBehaviour:

@@ -19,6 +19,14 @@ public class ArmadilloMovement : MonoBehaviour
     public GameObject Armor;
     public bool eating = false;
 
+    public bool OnScorpion = false;
+    public float ScorpionCount;
+    public float MaxSC = 1.5f;
+    public ScorpionBar scorpionBar;
+    public GameObject Point3;
+    public GameObject CurrentScorpion;
+    public bool noScorpion;
+
     //Audio
     public AudioSource audioSource;
     public AudioClip pearClip;
@@ -31,10 +39,13 @@ public class ArmadilloMovement : MonoBehaviour
         txtScore.text = score.ToString();
         direction = 0;
         SpawnPear();
+
+        ScorpionCount = 0;
+        scorpionBar.SetMaxOnSlider(MaxSC);
+        noScorpion = false;
     }
     void Update()
     {
-
         //Replace all Input.GetAxisRaw("Horizontal") with joystick.Horizontal
 
         if (movement)
@@ -116,6 +127,22 @@ public class ArmadilloMovement : MonoBehaviour
             anim.SetBool("Brace", false);
         }
 
+        //Scorpion
+        if (anim.GetBool("Eat") == true && OnScorpion == true)
+        {
+            ScorpionCount += Time.deltaTime;
+            scorpionBar.SetSlider(ScorpionCount);
+        }
+
+        if (ScorpionCount > MaxSC && OnScorpion == true)
+        {
+            noScorpion = true;
+            Destroy(CurrentScorpion);
+            Instantiate(Point3, this.transform.position, this.transform.rotation);
+            UpdateScore(3);
+            SpawnScorpion();
+        }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -125,6 +152,18 @@ public class ArmadilloMovement : MonoBehaviour
             UpdateScore(1);
             Destroy(collision.gameObject);
             SpawnPear();
+        }
+        if (collision.tag == "Scorpion")
+        {
+            CurrentScorpion = collision.gameObject;
+            OnScorpion = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Scorpion")
+        {
+            OnScorpion = false;
         }
     }
 
@@ -137,10 +176,26 @@ public class ArmadilloMovement : MonoBehaviour
     private void SpawnPear()
     {
         Instantiate(PearPrefab, SpawningSpots[Random.Range(0, 10)].transform.position, PearPrefab.transform.rotation);
+        if(noScorpion == true)
+        {
+            SpawnScorpion();
+        }
     }
     public void SpawnScorpion()
     {
-        Instantiate(ScorpionPrefab, SpawningSpots[Random.Range(0, 5)].transform.position, ScorpionPrefab.transform.rotation);
+        int random = Random.Range(0, 3);
+        Debug.Log(random);
+        if(random == 1)
+        {
+            noScorpion = false;
+            Instantiate(ScorpionPrefab, ScorpionSpawningSpots[Random.Range(0, 5)].transform.position, ScorpionPrefab.transform.rotation);
+            ScorpionCount = 0;
+        }
+        else
+        {
+            return;
+        }
+        
     }
 
 

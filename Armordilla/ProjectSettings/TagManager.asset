@@ -17,6 +17,7 @@ TagManager:
   - FirePoint4
   - FirePointHorse
   - 3
+  - Scorpion
   layers:
   - Default
   - TransparentFX
