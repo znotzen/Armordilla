@@ -15,6 +15,7 @@ public class ArmadilloMovement : MonoBehaviour
     public Transform[] SpawningSpots;
     public GameObject PearPrefab;
     public GameObject Armor;
+    public bool eating = false;
 
     //Audio
     public AudioSource audioSource;
@@ -26,7 +27,7 @@ public class ArmadilloMovement : MonoBehaviour
     private void Start()
     {
         txtScore.text = score.ToString();
-        direction = -1;
+        direction = 0;
         SpawnPear();
     }
     void Update()
@@ -49,9 +50,9 @@ public class ArmadilloMovement : MonoBehaviour
         //Setting Direction
         if(Input.GetAxisRaw("Horizontal") != 0 && direction != Input.GetAxisRaw("Horizontal"))
         {
-            Armor.transform.position = this.transform.position + new Vector3(0, 0.25f, 0);
-            anim.SetFloat("Direction", Input.GetAxisRaw("Horizontal"));
-            direction = Input.GetAxisRaw("Horizontal");
+                Armor.transform.position = this.transform.position + new Vector3(0, 0.25f, 0);
+                anim.SetFloat("Direction", Input.GetAxisRaw("Horizontal"));
+                direction = Input.GetAxisRaw("Horizontal");
         }
 
         //Armor
@@ -70,24 +71,15 @@ public class ArmadilloMovement : MonoBehaviour
 
 
         //E = Eat
-            if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
+            movement = false;
             anim.SetBool("Eat", true);
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
+            movement = true;
             anim.SetBool("Eat", false);
-        }
-
-        //Q = Roll (Toggle)
-        if (Input.GetKey(KeyCode.Q))
-        {
-            anim.SetBool("Roll", true);
-        }
-        //Temp Fix
-        if (Input.GetKey(KeyCode.T))
-        {
-            anim.SetBool("Roll", false);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -125,6 +117,8 @@ public class ArmadilloMovement : MonoBehaviour
         Instantiate(PearPrefab, SpawningSpots[Random.Range(0, 10)].transform.position, PearPrefab.transform.rotation);
     }
 
+
+    //Lining up the armor when he walks
     public void RiseArmor()
     {
         Armor.transform.position = Armor.transform.position + new Vector3(0,0.06f,0);
