@@ -13,7 +13,9 @@ public class ArmadilloMovement : MonoBehaviour
     public Text txtScore;
     public int score = 0;
     public Transform[] SpawningSpots;
+    public Transform[] ScorpionSpawningSpots;
     public GameObject PearPrefab;
+    public GameObject ScorpionPrefab;
     public GameObject Armor;
     public bool eating = false;
 
@@ -113,6 +115,7 @@ public class ArmadilloMovement : MonoBehaviour
             movement = true;
             anim.SetBool("Brace", false);
         }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -125,7 +128,7 @@ public class ArmadilloMovement : MonoBehaviour
         }
     }
 
-    private void UpdateScore(int points)
+    public void UpdateScore(int points)
     {
         score = score + points;
         txtScore.text = score.ToString();
@@ -134,6 +137,10 @@ public class ArmadilloMovement : MonoBehaviour
     private void SpawnPear()
     {
         Instantiate(PearPrefab, SpawningSpots[Random.Range(0, 10)].transform.position, PearPrefab.transform.rotation);
+    }
+    public void SpawnScorpion()
+    {
+        Instantiate(ScorpionPrefab, SpawningSpots[Random.Range(0, 5)].transform.position, ScorpionPrefab.transform.rotation);
     }
 
 

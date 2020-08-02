@@ -16,6 +16,7 @@ TagManager:
   - FirePoint3
   - FirePoint4
   - FirePointHorse
+  - 3
   layers:
   - Default
   - TransparentFX

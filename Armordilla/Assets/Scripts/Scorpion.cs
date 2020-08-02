@@ -5,16 +5,21 @@ using UnityEngine.UI;
 
 public class Scorpion : MonoBehaviour
 {
-
+    public GameObject Armadillo;
     public Animator ArmadilloAnim;
     public bool OnScorpion = false;
     public float ScorpionCount;
     public float MaxSC = 1.5f;
 
     public ScorpionBar scorpionBar;
+    public GameObject Point3;
+
+    public ArmadilloMovement armadilloMovement;
 
     private void Start()
     {
+        Armadillo = GameObject.FindGameObjectWithTag("Arm");
+        ArmadilloAnim = Armadillo.GetComponent<Animator>();
         ScorpionCount = 0;
         scorpionBar.SetMaxOnSlider(MaxSC);
     }
@@ -44,6 +49,8 @@ public class Scorpion : MonoBehaviour
 
         if(ScorpionCount > MaxSC)
         {
+            Instantiate(Point3, this.transform.position, this.transform.rotation);
+            armadilloMovement.UpdateScore(3);
             Destroy(this.gameObject);
         }
     }
