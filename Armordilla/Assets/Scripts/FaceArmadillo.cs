@@ -17,10 +17,11 @@ public class FaceArmadillo : MonoBehaviour
         Gunner2 = GameObject.FindGameObjectWithTag("Gunner2");
         Gunner3 = GameObject.FindGameObjectWithTag("Gunner3");
         Gunner4 = GameObject.FindGameObjectWithTag("Gunner4");
-        GunnerHorse = GameObject.FindGameObjectWithTag("GunnerHorse");
     }
     void Update()
     {
+        //Debug.Log(DoNotFace);
+
         if (this.gameObject == Gunner1)
         {
             FaceArm(-90);
@@ -37,7 +38,7 @@ public class FaceArmadillo : MonoBehaviour
         {
             FaceArm(20);
         }
-            
+
 
     }
     void FaceArm(int offset)

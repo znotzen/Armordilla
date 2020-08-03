@@ -19,6 +19,7 @@ public class ArmadilloMovement : MonoBehaviour
     public GameObject Armor;
     public bool eating = false;
 
+    //Scorpion
     public bool OnScorpion = false;
     public float ScorpionCount;
     public float MaxSC = 1.5f;
@@ -26,6 +27,10 @@ public class ArmadilloMovement : MonoBehaviour
     public GameObject Point3;
     public GameObject CurrentScorpion;
     public bool noScorpion;
+
+    //Cowboys shoot
+    public bool Cowboy1Shoot = false;
+    public bool Cowboy4Shoot = false;
 
     //Audio
     public AudioSource audioSource;
@@ -158,12 +163,28 @@ public class ArmadilloMovement : MonoBehaviour
             CurrentScorpion = collision.gameObject;
             OnScorpion = true;
         }
+        if (collision.tag == "LeftOfScreen")
+        {
+            Cowboy1Shoot = true;
+        }
+        if (collision.tag == "RightOfScreen")
+        {
+            Cowboy4Shoot = true;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Scorpion")
         {
             OnScorpion = false;
+        }
+        if (collision.tag == "LeftOfScreen")
+        {
+            Cowboy1Shoot = false;
+        }
+        if (collision.tag == "RightOfScreen")
+        {
+            Cowboy4Shoot = false;
         }
     }
 
@@ -184,7 +205,6 @@ public class ArmadilloMovement : MonoBehaviour
     public void SpawnScorpion()
     {
         int random = Random.Range(0, 3);
-        Debug.Log(random);
         if(random == 1)
         {
             noScorpion = false;

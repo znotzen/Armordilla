@@ -4,15 +4,78 @@ using UnityEngine;
 
 public class CowboyHorseFire : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject firePoint;
+    public GameObject bulletPrefab;
+    public GameObject Armadillo;
+    public GameObject Horse;
+
+    public bool DoNotFace;
+    public Quaternion DefaultArmRotation;
+
+    private float timeBetweenShots = 1.5f; //Could randomize
+    private float time = 0;
+
+    private void Start()
     {
+        DefaultArmRotation = this.transform.rotation;
+    }
+
+    void Update()
+    {
+
+        time += Time.deltaTime;
+
+        if(time > 1.5f && Horse.GetComponent<Horse>().HorseMoving == true)
+        {
+            Fire();
+            time = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Fire();
+        }
+
+        if (DoNotFace)
+        {
+            this.transform.rotation = DefaultArmRotation;
+        }
+        else
+        {
+            FaceArm(40);
+        }
+        
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void Fire()
     {
-        
+        Destroy(Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation), 1f);
+    }
+
+    void FaceArm(int offset)
+    {
+        var dx = this.transform.position.x - Armadillo.transform.position.x;
+        var dy = this.transform.position.y - Armadillo.transform.position.y;
+        var radians = Mathf.Atan2(dy, dx);
+        var rotateZ = radians * 180 / Mathf.PI + offset;
+
+        this.transform.eulerAngles = new Vector3(this.transform.rotation.x, this.transform.rotation.y, rotateZ);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "LeftOfScreen")
+        {
+            DoNotFace = true;
+        }
+
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "LeftOfScreen")
+        {
+            DoNotFace = false;
+        }
     }
 }

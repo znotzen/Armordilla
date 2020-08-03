@@ -18,6 +18,8 @@ TagManager:
   - FirePointHorse
   - 3
   - Scorpion
+  - LeftOfScreen
+  - RightOfScreen
   layers:
   - Default
   - TransparentFX

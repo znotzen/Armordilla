@@ -47,7 +47,7 @@ public class Scorpion : MonoBehaviour
             scorpionBar.SetSlider(ScorpionCount);
         }
 
-        if(ScorpionCount > MaxSC)
+        if (ScorpionCount > MaxSC)
         {
             Instantiate(Point3, this.transform.position, this.transform.rotation);
             armadilloMovement.UpdateScore(3);
