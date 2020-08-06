@@ -198,7 +198,7 @@ public class ArmadilloMovement : MonoBehaviour
     {
         if (collision.tag == "Pear")
         {
-            audioSource.PlayOneShot(pearClip, volume);
+            audioSource.PlayOneShot(pearClip, 1);
             UpdateScore(1);
             Destroy(collision.gameObject);
             SpawnPear();

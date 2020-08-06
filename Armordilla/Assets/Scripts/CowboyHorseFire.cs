@@ -15,6 +15,10 @@ public class CowboyHorseFire : MonoBehaviour
     private float timeBetweenShots = 1.5f; //Could randomize
     private float time = 0;
 
+    public AudioSource audioSource;
+    public AudioClip gunFire;
+    public float volume = 0.5f;
+
     private void Start()
     {
         DefaultArmRotation = this.transform.rotation;
@@ -50,6 +54,7 @@ public class CowboyHorseFire : MonoBehaviour
 
     void Fire()
     {
+        audioSource.PlayOneShot(gunFire, volume);
         Destroy(Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation), 1f);
     }
 

@@ -8,7 +8,7 @@ public class Cowboy1Fire : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject Armadillo;
 
-    private float timeBetweenShots = 1.5f; //Could randomize
+    private float timeBetweenShots = 1.5f;
     private float time = 0;
 
     //Audio
@@ -28,6 +28,7 @@ public class Cowboy1Fire : MonoBehaviour
             time += Time.deltaTime;
             if (time > timeBetweenShots)
             {
+                timeBetweenShots = Random.Range(1.5f, 6f);
                 time = 0;
                 Fire();
             }

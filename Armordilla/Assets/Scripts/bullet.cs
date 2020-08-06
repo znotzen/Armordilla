@@ -14,6 +14,11 @@ public class bullet : MonoBehaviour
 
     public GameObject Armor;
 
+    public AudioSource audioSource;
+    public AudioClip ArmorClink;
+    public AudioClip ArmadilloBounce;
+    public AudioClip ArmorBreak;
+
     void Start()
     {
         armadillo = GameObject.FindGameObjectWithTag("Arm");
@@ -32,7 +37,16 @@ public class bullet : MonoBehaviour
                 this.GetComponent<BoxCollider2D>().enabled = false;
                 this.gameObject.transform.Rotate(0, 0, 90);
                 rb.velocity = transform.right * -speed;
-   
+                if (Armor != null)
+                {
+                    //Armor bounce sound
+                    audioSource.PlayOneShot(ArmorClink, 1f);
+                }
+                else
+                {
+                    //Armadillo bounce sound
+                    audioSource.PlayOneShot(ArmadilloBounce, 0.5f);
+                }
             }
             else
             {
@@ -40,6 +54,7 @@ public class bullet : MonoBehaviour
                 Destroy(this.gameObject);
                 if(Armor != null)
                 {
+                    audioSource.PlayOneShot(ArmorBreak, 1f);
                     Destroy(Armor);
                 }
                 else

@@ -11,16 +11,25 @@ public class Horse : MonoBehaviour
 
     void Update()
     {
-        if(Armadillo.GetComponent<ArmadilloMovement>().score > 10)
+        float remainder;
+
+        remainder = Armadillo.GetComponent<ArmadilloMovement>().score % 10;
+
+        if (remainder == 0 && Armadillo.GetComponent<ArmadilloMovement>().score > 9)
         {
             HorseMoving = true;
-            this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x + 5.5f * Time.deltaTime, this.gameObject.transform.position.y);
         }
         
 
         if (this.gameObject.transform.position.x >= 15)
         {
+            HorseMoving = false;
             this.gameObject.transform.position = new Vector3(-11.7f,-0.81f,0);
+        }
+
+        if(HorseMoving == true)
+        {
+            this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x + 5.5f * Time.deltaTime, this.gameObject.transform.position.y);
         }
         
         
