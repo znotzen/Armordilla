@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ArmadilloMovement : MonoBehaviour
 {
@@ -35,9 +36,13 @@ public class ArmadilloMovement : MonoBehaviour
     //Audio
     public AudioSource audioSource;
     public AudioClip pearClip;
+    public AudioClip backgroundMusic;
+    public AudioClip gameOver;
     public float volume = 0.5f;
 
     private float direction;
+    private float gameOverTime = 0;
+    private bool EndGame = false;
 
     private void Start()
     {
@@ -48,6 +53,8 @@ public class ArmadilloMovement : MonoBehaviour
         ScorpionCount = 0;
         scorpionBar.SetMaxOnSlider(MaxSC);
         noScorpion = false;
+
+        
     }
     void Update()
     {
@@ -63,7 +70,11 @@ public class ArmadilloMovement : MonoBehaviour
         {
             theRB.velocity = new Vector2(0,0);
             anim.SetFloat("Speed", 0);
-            Armor.transform.position = this.transform.position + new Vector3(0, 0.25f, 0);
+            if(Armor != null)
+            {
+                Armor.transform.position = this.transform.position + new Vector3(0, 0.25f, 0);
+            }
+            
         }
 
         //Fixing auto flip to left idle animation
@@ -83,7 +94,10 @@ public class ArmadilloMovement : MonoBehaviour
         //Setting Direction
         if(Input.GetAxisRaw("Horizontal") != 0 && direction != Input.GetAxisRaw("Horizontal"))
         {
+            if (Armor != null)
+            {
                 Armor.transform.position = this.transform.position + new Vector3(0, 0.25f, 0);
+            }
                 anim.SetFloat("Direction", Input.GetAxisRaw("Horizontal"));
                 direction = Input.GetAxisRaw("Horizontal");
         }
@@ -91,19 +105,26 @@ public class ArmadilloMovement : MonoBehaviour
         //Armor
         if (movement) //Prevents armor flipping while bracing or eating
         {
-            if (direction == -1)
+            if (Armor != null)
             {
-                Armor.transform.localScale = new Vector3(1, 1, 1);
+                if (direction == -1)
+                {
+                    Armor.transform.localScale = new Vector3(1, 1, 1);
+                }
+                if (direction == 1)
+                {
+                    Armor.transform.localScale = new Vector3(-1, 1, 1);
+                }
             }
-            if (direction == 1)
-            {
-                Armor.transform.localScale = new Vector3(-1, 1, 1);
-            }
+            
         }
         
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
-            Armor.transform.position = this.transform.position + new Vector3(0, 0.25f, 0);
+            if (Armor != null)
+            {
+                Armor.transform.position = this.transform.position + new Vector3(0, 0.25f, 0);
+            }
         }
 
 
@@ -147,6 +168,30 @@ public class ArmadilloMovement : MonoBehaviour
             UpdateScore(3);
             SpawnScorpion();
         }
+
+        //If armadillo upside-down then gameover
+        if (this.transform.rotation == Quaternion.Euler(0, 0, 180))
+        {
+            GameOver();
+        }
+
+        if(EndGame == true)
+        {
+            gameOverTime += Time.deltaTime;
+        }
+        if(gameOverTime > 1.5f)
+        {
+            //switch scenes
+            SceneManager.LoadScene("GameOver");
+        }
+
+
+            //Temp fix
+            if (anim.GetBool("Brace") == true)
+        {
+            movement = false;
+        }
+
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -222,11 +267,32 @@ public class ArmadilloMovement : MonoBehaviour
     //Lining up the armor when he walks
     public void RiseArmor()
     {
-        Armor.transform.position = Armor.transform.position + new Vector3(0,0.06f,0);
+        if (Armor != null)
+        {
+            Armor.transform.position = Armor.transform.position + new Vector3(0,0.06f,0);
+        } 
     }
     public void LowerArmor()
     {
-        Armor.transform.position = Armor.transform.position - new Vector3(0, 0.06f, 0);
+        if (Armor != null)
+        {
+            Armor.transform.position = Armor.transform.position - new Vector3(0, 0.06f, 0);
+        } 
+    }
+
+    //GameOver
+    public void GameOver()
+    {
+        movement = false;
+        audioSource.PlayOneShot(gameOver, volume);
+
+        Cowboy1Shoot = false;
+        //Cowboy2Shoot = false;
+        //Cowboy3Shoot = false;
+        Cowboy4Shoot = false;
+        //CowboyHorseShoot = false;
+
+        EndGame = true;
     }
 
 }

@@ -11,6 +11,11 @@ public class Cowboy1Fire : MonoBehaviour
     private float timeBetweenShots = 1.5f; //Could randomize
     private float time = 0;
 
+    //Audio
+    public AudioSource audioSource;
+    public AudioClip gunFire;
+    public float volume = 0.5f;
+
 
     void Update()
     {
@@ -31,6 +36,7 @@ public class Cowboy1Fire : MonoBehaviour
 
     void Fire()
     {
+        audioSource.PlayOneShot(gunFire, volume);
         Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
     }
 }
