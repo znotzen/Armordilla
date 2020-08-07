@@ -10,21 +10,21 @@ public class ArmorScript : MonoBehaviour
     {
 
         //E = Eat
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("Fire3"))
         {
             anim.SetBool("Eat", true);
         }
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetButtonUp("Fire3"))
         {
             anim.SetBool("Eat", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Fire1"))
         {
             //Brace
             anim.SetBool("Brace", true);
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButtonUp("Fire1"))
         {
             //End Brace
             anim.SetBool("Brace", false);

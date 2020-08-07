@@ -136,24 +136,26 @@ public class ArmadilloMovement : MonoBehaviour
 
 
         //E = Eat
-        if (Input.GetKeyDown(KeyCode.E))
+        //Input.GetKeyDown(KeyCode.E)
+        if (Input.GetButtonDown("Fire3"))
         {
             movement = false;
             anim.SetBool("Eat", true);
         }
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetButtonUp("Fire3"))
         {
             movement = true;
             anim.SetBool("Eat", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        //Input.GetKeyDown(KeyCode.Space)
+        if (Input.GetButtonDown("Fire1"))
         {
             //Brace
             movement = false;
             anim.SetBool("Brace", true);
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButtonUp("Fire1"))
         {
             //End Brace
             movement = true;

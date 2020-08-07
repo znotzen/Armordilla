@@ -55,6 +55,13 @@ public class MenuManager : MonoBehaviour
             TumbleWeedMovement = false;
             TumbleWeed.transform.position = new Vector3(-12.8f, -3.18f);
         }
+
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            SceneManager.LoadScene("Game");
+        }
+
     }
 
 
