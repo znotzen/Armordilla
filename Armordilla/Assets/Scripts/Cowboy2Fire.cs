@@ -12,7 +12,10 @@ public class Cowboy2Fire : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip gunFire;
+    public AudioClip Cowboy2Warning;
     public float volume = 0.5f;
+
+    private bool gaveWarning = false;
 
 
     void Update()
@@ -23,9 +26,16 @@ public class Cowboy2Fire : MonoBehaviour
         //}
 
         time += Time.deltaTime;
+        if (time > timeBetweenShots - .5f && gaveWarning == false)
+        {
+            //Warning
+            audioSource.PlayOneShot(Cowboy2Warning, 0.7f);
+            gaveWarning = true;
+        }
         if (time > timeBetweenShots)
         {
             time = 0;
+            gaveWarning = false;
             Fire();
         }
     }

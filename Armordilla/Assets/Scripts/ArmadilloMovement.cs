@@ -58,6 +58,13 @@ public class ArmadilloMovement : MonoBehaviour
     }
     void Update()
     {
+        //Update player pref score
+        if(PlayerPrefs.GetInt("Score") != score)
+        {
+            PlayerPrefs.SetInt("Score", score);
+        }
+
+
         //Replace all Input.GetAxisRaw("Horizontal") with joystick.Horizontal
 
         if (movement)

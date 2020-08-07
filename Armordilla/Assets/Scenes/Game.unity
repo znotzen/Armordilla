@@ -1630,6 +1630,7 @@ MonoBehaviour:
     type: 3}
   audioSource: {fileID: 569552164}
   gunFire: {fileID: 8300000, guid: 89ac87e30a89d9a42bc4c20006d201ef, type: 3}
+  Cowboy3Warning: {fileID: 8300000, guid: bbeb1ce95a249af47af9b715f655896d, type: 3}
   volume: 0.5
 --- !u!82 &569552164
 AudioSource:
@@ -2057,15 +2058,15 @@ RectTransform:
   m_GameObject: {fileID: 674793762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_Children: []
   m_Father: {fileID: 2120812873}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.6, y: 124.5}
-  m_SizeDelta: {x: 242.8, y: 107.36}
+  m_AnchoredPosition: {x: -230.89, y: -127.98}
+  m_SizeDelta: {x: 327.828, y: 143.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &674793764
 MonoBehaviour:
@@ -2087,11 +2088,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 80
+    m_FontSize: 117
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 80
+    m_MaxSize: 122
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2677,6 +2678,7 @@ MonoBehaviour:
   Armadillo: {fileID: 1378642779}
   audioSource: {fileID: 820909092}
   gunFire: {fileID: 8300000, guid: 89ac87e30a89d9a42bc4c20006d201ef, type: 3}
+  Cowboy1Warning: {fileID: 8300000, guid: 67fd3b5a0c23a2b4eb2add78483d6cf0, type: 3}
   volume: 0.5
 --- !u!82 &820909092
 AudioSource:
@@ -3154,36 +3156,6 @@ Transform:
   m_Father: {fileID: 569552161}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 39.424004}
---- !u!1 &1108062052
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1108062053}
-  m_Layer: 0
-  m_Name: Missing Prefab
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1108062053
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1108062052}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2120812873}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1136440115
 GameObject:
   m_ObjectHideFlags: 0
@@ -4677,6 +4649,7 @@ MonoBehaviour:
     type: 3}
   audioSource: {fileID: 1700256960}
   gunFire: {fileID: 8300000, guid: 89ac87e30a89d9a42bc4c20006d201ef, type: 3}
+  Cowboy2Warning: {fileID: 8300000, guid: 4ec3111b70cb1ef4ca40be46c66d06d5, type: 3}
   volume: 0.5
 --- !u!82 &1700256960
 AudioSource:
@@ -5086,7 +5059,7 @@ Canvas:
   m_GameObject: {fileID: 2120812869}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -5107,15 +5080,14 @@ RectTransform:
   m_GameObject: {fileID: 2120812869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1108062053}
   - {fileID: 674793763}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 231, y: 130}
+  m_SizeDelta: {x: 462, y: 260}
+  m_Pivot: {x: 0.5, y: 0.5}

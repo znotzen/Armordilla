@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
@@ -15,6 +16,13 @@ public class MenuManager : MonoBehaviour
 
     private bool TumbleWeedMovement = false;
     public GameObject TumbleWeed;
+
+    public Text txtHighScore;
+
+    private void Start()
+    {
+        txtHighScore.text = PlayerPrefs.GetInt("HighScore").ToString();
+    }
 
     private void Update()
     {
