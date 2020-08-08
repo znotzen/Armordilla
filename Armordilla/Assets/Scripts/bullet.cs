@@ -19,6 +19,7 @@ public class bullet : MonoBehaviour
     public AudioClip ArmadilloBounce;
     public AudioClip ArmorBreak;
 
+
     void Start()
     {
         armadillo = GameObject.FindGameObjectWithTag("Arm");
@@ -59,10 +60,12 @@ public class bullet : MonoBehaviour
                 }
                 else
                 {
-                    if (armadillo.transform.rotation == Quaternion.Euler(0,0,0))
-                    {
-                        armadillo.transform.Rotate(0, 0, 180);
-                    }
+                   if (armadillo.transform.rotation == Quaternion.Euler(0,0,0))
+                   {
+                       armadillo.transform.Rotate(0, 0, 180);
+                   }
+          
+                    
                     
                 }
             }

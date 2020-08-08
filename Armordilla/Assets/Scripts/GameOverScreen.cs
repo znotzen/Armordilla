@@ -18,6 +18,7 @@ public class GameOverScreen : MonoBehaviour
         txtScore.text = score.ToString();
         txtHighScore.text = PlayerPrefs.GetInt("HighScore").ToString();
         select.transform.position = new Vector3(4.4f, 2.06f, 0);
+        select.SetActive(false);
     }
 
     private void Update()
@@ -26,6 +27,11 @@ public class GameOverScreen : MonoBehaviour
         {
             PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("Score"));
             txtHighScore.text = PlayerPrefs.GetInt("HighScore").ToString();
+        }
+
+        if ((Input.GetAxisRaw("Vertical") == -1 || Input.GetAxisRaw("Vertical") == 1) && select.activeSelf == false)
+        {
+            select.SetActive(true);
         }
 
         if (Input.GetAxisRaw("Vertical") == -1)
