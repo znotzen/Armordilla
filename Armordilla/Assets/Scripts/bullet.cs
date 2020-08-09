@@ -57,13 +57,19 @@ public class bullet : MonoBehaviour
                 {
                     audioSource.PlayOneShot(ArmorBreak, 1f);
                     Destroy(Armor);
+                    // Store on armadillo because bullet gets destroyed
+                    armadillo.GetComponent<ArmadilloMovement>().invincible = true;
                 }
                 else
                 {
-                   if (armadillo.transform.rotation == Quaternion.Euler(0,0,0))
-                   {
-                       armadillo.transform.Rotate(0, 0, 180);
-                   }
+                    if(armadillo.GetComponent<ArmadilloMovement>().invincible == false)
+                    {
+                        if (armadillo.transform.rotation == Quaternion.Euler(0,0,0))
+                        {
+                            armadillo.transform.Rotate(0, 0, 180);
+                        }
+                    }
+                   
           
                     
                     

@@ -44,6 +44,9 @@ public class ArmadilloMovement : MonoBehaviour
     private float gameOverTime = 0;
     private bool EndGame = false;
 
+    public bool invincible = false;
+    public float invTime = 0;
+
     private void Start()
     {
         txtScore.text = score.ToString();
@@ -201,6 +204,17 @@ public class ArmadilloMovement : MonoBehaviour
             movement = false;
         }
 
+
+
+            //invincibility time
+            if(invincible == true)
+        {
+            invTime += Time.deltaTime;
+            if(invTime > .5f)
+            {
+                invincible = false;
+            }
+        }
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
