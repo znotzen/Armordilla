@@ -28,6 +28,13 @@ public class MenuManager : MonoBehaviour
     public GameObject musicSounds;
     public GameObject musicCheck;
     public GameObject soundsCheck;
+    public Button PlayBtn;
+    public Button ExitBtn;
+    public Button SettingsBtn;
+    public Button SoundsBtn;
+    public Button ControlsBtn;
+    public Button MusicCheckBtn;
+    public Button SoundsCheckBtn;
 
     private void Start()
     {
@@ -109,8 +116,8 @@ public class MenuManager : MonoBehaviour
         if (menuType == "select" && Input.GetAxisRaw("Vertical") == -1)
         {
             //Controls Button
-            select.transform.position = new Vector3(-0.12f, -1.093f, 0);
-            select.transform.localScale = new Vector3(8.558922f, 5.220723f, 1f);
+            select.transform.position = new Vector3(-0.056f, -1.655f, 0);
+            select.transform.localScale = new Vector3(8.397242f, 5.214218f, 1f);
 
         }
         if (menuType == "select" && Input.GetAxisRaw("Horizontal") == 1)
@@ -129,7 +136,7 @@ public class MenuManager : MonoBehaviour
         {
             BtnMusicSounds();
         }
-        if (menuType == "select" && select.transform.position == new Vector3(-0.12f, -1.093f, 0) && Input.GetButtonDown("Fire1"))
+        if (menuType == "select" && select.transform.position == new Vector3(-0.056f, -1.655f, 0) && Input.GetButtonDown("Fire1"))
         {
             BtnControls();
         }
@@ -183,11 +190,11 @@ public class MenuManager : MonoBehaviour
         {
             BtnExit();
         }
-        if (menuType == "sounds" && select.transform.position == new Vector3(1.995f, 1.29f, 0) && Input.GetButtonDown("Fire1"))
+        if (menuType == "sounds" && select.transform.position == new Vector3(1.995f, 1.29f, 0) && Input.GetButtonDown("Fire1") && select.activeSelf == true)
         {
             BtnMusicCheck();
         }
-        if (menuType == "sounds" && select.transform.position == new Vector3(2.01f, -1.11f, 0) && Input.GetButtonDown("Fire1"))
+        if (menuType == "sounds" && select.transform.position == new Vector3(2.01f, -1.11f, 0) && Input.GetButtonDown("Fire1") && select.activeSelf == true)
         {
             BtnSoundsCheck();
         }
@@ -209,7 +216,7 @@ public class MenuManager : MonoBehaviour
             select.transform.position = new Vector3(5.685f, 2.758f, 0);
             select.transform.localScale = new Vector3(1.722043f, 4.675179f, 1f);
         }
-        if (select.transform.position == new Vector3(-0.12f, -1.093f, 0) && menuType == "controls")
+        if (select.transform.position == new Vector3(-0.056f, -1.655f, 0) && menuType == "controls")
         {
             //Move to exit location
             select.transform.position = new Vector3(5.685f, 2.758f, 0);
@@ -229,6 +236,14 @@ public class MenuManager : MonoBehaviour
         settingsMenu.SetActive(true);
         settingsButton.SetActive(true);
         controlsButton.SetActive(true);
+
+        SettingsBtn.enabled = false;
+        ExitBtn.enabled = true;
+        SoundsBtn.enabled = true;
+        ControlsBtn.enabled = true;
+        PlayBtn.enabled = false;
+        MusicCheckBtn.enabled = false;
+        SoundsCheckBtn.enabled = false;
         menuType = "select";
     }
     public void BtnExit()
@@ -237,6 +252,12 @@ public class MenuManager : MonoBehaviour
         settingsMenu.SetActive(false);
         controlScheme.SetActive(false);
         musicSounds.SetActive(false);
+
+        PlayBtn.enabled = true;
+        SettingsBtn.enabled = true;
+        ExitBtn.enabled = false;
+        SoundsBtn.enabled = false;
+        ControlsBtn.enabled = false;
         menuType = "main";
     }
     public void BtnMusicSounds()
@@ -245,7 +266,12 @@ public class MenuManager : MonoBehaviour
 
         //Sounds
         settingsButton.SetActive(false);
+        SoundsBtn.enabled = false;
         controlsButton.SetActive(false);
+        ControlsBtn.enabled = false;
+
+        MusicCheckBtn.enabled = true;
+        SoundsCheckBtn.enabled = true;
 
         musicSounds.SetActive(true);
     }
