@@ -36,10 +36,15 @@ public class MenuManager : MonoBehaviour
     public Button MusicCheckBtn;
     public Button SoundsCheckBtn;
 
+    public GameObject quitMenu;
+    public Text txtQuit;
+
     private void Start()
     {
         txtHighScore.text = PlayerPrefs.GetInt("HighScore").ToString();
         select.SetActive(false);
+        quitMenu.SetActive(false);
+        txtQuit.enabled = false;
     }
 
     private void Update()
@@ -233,6 +238,9 @@ public class MenuManager : MonoBehaviour
     }
     public void BtnSettings()
     {
+        quitMenu.SetActive(false);
+        txtQuit.enabled = false;
+
         settingsMenu.SetActive(true);
         settingsButton.SetActive(true);
         controlsButton.SetActive(true);
@@ -307,6 +315,19 @@ public class MenuManager : MonoBehaviour
         else
         {
             soundsCheck.SetActive(true);
+        }
+    }
+    public void BtnQuitGame()
+    {
+        if(quitMenu.activeSelf == false)
+        {
+            quitMenu.SetActive(true);
+            txtQuit.enabled = true;
+        }
+        else
+        {
+            //Quit Game
+            Application.Quit();
         }
     }
 }
