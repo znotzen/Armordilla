@@ -12,12 +12,23 @@ public class GameOverScreen : MonoBehaviour
 
     public GameObject select;
 
+    public AudioSource GameOverMusic;
+
     private void Start()
     {
         score = PlayerPrefs.GetInt("Score");
         txtScore.text = score.ToString();
         txtHighScore.text = PlayerPrefs.GetInt("HighScore").ToString();
         select.SetActive(false);
+
+        if (PlayerPrefs.GetInt("Music") == 1)
+        {
+            GameOverMusic.Play();
+        }
+        else
+        {
+            GameOverMusic.Stop();
+        }
     }
 
     private void Update()

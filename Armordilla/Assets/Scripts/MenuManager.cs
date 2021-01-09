@@ -35,6 +35,9 @@ public class MenuManager : MonoBehaviour
     public Button ControlsBtn;
     public Button MusicCheckBtn;
     public Button SoundsCheckBtn;
+    public AudioSource MenuMusic;
+
+    private bool musicChanged = false;
 
     public GameObject quitMenu;
     public Text txtQuit;
@@ -45,10 +48,51 @@ public class MenuManager : MonoBehaviour
         select.SetActive(false);
         quitMenu.SetActive(false);
         txtQuit.enabled = false;
+
+        if(PlayerPrefs.GetInt("Music") != 1 || PlayerPrefs.GetInt("Music") != 0)
+        {
+            PlayerPrefs.SetInt("Music", 1);
+        }
+        if (PlayerPrefs.GetInt("Sounds") != 1 || PlayerPrefs.GetInt("Sounds") != 0)
+        {
+            PlayerPrefs.SetInt("Sounds", 1);
+        }
+
+        if (PlayerPrefs.GetInt("Music") == 1)
+        {
+            MenuMusic.Play();
+            musicCheck.SetActive(true);
+        }
+        else
+        {
+            musicCheck.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt("Sounds") == 1)
+        {
+            soundsCheck.SetActive(false);
+        }
+        else
+        {
+            soundsCheck.SetActive(true);
+        }
     }
 
     private void Update()
     {
+        if(musicChanged == true)
+        {
+            if (PlayerPrefs.GetInt("Music") == 1)
+            {
+                MenuMusic.Play();
+            }
+            else
+            {
+                MenuMusic.Stop();
+            }
+            musicChanged = false;
+        }
+
         if (flapTimer <= 0)
         {
             VultureAnim.SetTrigger("Flap");
@@ -295,14 +339,17 @@ public class MenuManager : MonoBehaviour
     }
     public void BtnMusicCheck()
     {
+        musicChanged = true;
         //Check or uncheck music
         if (musicCheck.activeSelf == true)
         {
             musicCheck.SetActive(false);
+            PlayerPrefs.SetInt("Music", 0);
         }
         else
         {
             musicCheck.SetActive(true);
+            PlayerPrefs.SetInt("Music", 1);
         }
     }
     public void BtnSoundsCheck()
@@ -311,10 +358,12 @@ public class MenuManager : MonoBehaviour
         if (soundsCheck.activeSelf == true)
         {
             soundsCheck.SetActive(false);
+            PlayerPrefs.SetInt("Sounds", 0);
         }
         else
         {
             soundsCheck.SetActive(true);
+            PlayerPrefs.SetInt("Sounds", 1);
         }
     }
     public void BtnQuitGame()

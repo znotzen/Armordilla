@@ -47,6 +47,8 @@ public class ArmadilloMovement : MonoBehaviour
     public bool invincible = false;
     public float invTime = 0;
 
+    public AudioSource GameMusic;
+
     private void Start()
     {
         txtScore.text = score.ToString();
@@ -57,7 +59,14 @@ public class ArmadilloMovement : MonoBehaviour
         scorpionBar.SetMaxOnSlider(MaxSC);
         noScorpion = false;
 
-        
+        if (PlayerPrefs.GetInt("Music") == 1)
+        {
+            GameMusic.Play();
+        }
+        else
+        {
+            GameMusic.Stop();
+        }
     }
     void Update()
     {
@@ -109,7 +118,15 @@ public class ArmadilloMovement : MonoBehaviour
                 Armor.transform.position = this.transform.position + new Vector3(0, 0.25f, 0);
             }
                 anim.SetFloat("Direction", Input.GetAxisRaw("Horizontal"));
-                direction = Input.GetAxisRaw("Horizontal");
+            //if(Input.GetAxisRaw("Horizontal") > 0)
+            //{
+            //    direction = 1;
+            //}
+            //if (Input.GetAxisRaw("Horizontal") < 0)
+            //{
+            //    direction = -1;
+            //}
+            direction = Input.GetAxisRaw("Horizontal");
         }
 
         //Armor
